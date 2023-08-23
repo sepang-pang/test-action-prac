@@ -35,6 +35,8 @@ class PostServiceTest {
         // when
         PostResponseDto responseDto = postService.createPost(requestDto);
 
+        
+
         // then
         assertEquals(responseDto.getContent(),content);
 
