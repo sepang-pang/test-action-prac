@@ -39,4 +39,25 @@ class PostServiceTest {
         assertEquals(responseDto.getContent(),content);
 
     }
+
+    @Test
+    @DisplayName("createPost() 테스트")
+    void createPost2() {
+        // given
+        String content = "test_content";
+
+        PostRequestDto requestDto = new PostRequestDto();
+        requestDto.setContent(content);
+
+        Post post = new Post(requestDto);
+
+        PostService postService = new PostService(postRepository);
+
+        // when
+        PostResponseDto responseDto = postService.createPost(requestDto);
+
+        // then
+        assertEquals(responseDto.getContent(),"content");
+
+    }
 }
